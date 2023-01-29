@@ -11,7 +11,7 @@ class SerialController : public QObject
     Q_OBJECT
 
     QSerialPort serialPort;
-    QString serialPortName = "COM8";
+    QString serialPortName = "/dev/ttyUSB0";
     QString serialPortBuad = "115200";
 
     QString relay_id       = "680834697";

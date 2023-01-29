@@ -72,7 +72,7 @@ rm -rf /etc/pulse
 apt install -q -y pulseaudio
 
 # #**** BOYA BY-MC2 ****
-# c1tech@orcp:~$ aplay -l
+# c1tech@pras:~$ aplay -l
 # **** List of PLAYBACK Hardware Devices ****
 # .....
 # card 1: Device [PDP Audio Device], device 0: USB Audio [USB Audio]
@@ -99,13 +99,6 @@ apt install -q -y pulseaudio
 
 # amixer -c 1 scontrols
 # amixer -c 1 sset 'Speaker' 68 && amixer -c 1 sset 'Mic' 68
-echo "-------------------------------------"
-echo "Configuring Fonts"
-echo "-------------------------------------"
-git clone https://github.com/Hamid-Najafi/FontPack.git /usr/share/fonts/FontPack || cd /usr/share/fonts/FontPack && git pull
-echo "build font information cache files"
-fc-cache -fv
-
 echo "-------------------------------------"
 echo "Configuring Vosk"
 echo "-------------------------------------"
@@ -177,7 +170,7 @@ dpkg-buildpackage -us -uc -b
 cd /home/c1tech/
 dpkg -i usbmount_0.0.24_all.deb
 echo "-------------------------------------"
-echo "Installing Hospital Automation System Application"
+echo "Installing Patient Room Automation System Application"
 echo "-------------------------------------"
 url="https://github.com/Hamid-Najafi/C1-Patient-Room-Automation-System.git"
 folder="/home/c1tech/C1-Patient-Room-Automation-System"
@@ -185,7 +178,7 @@ folder="/home/c1tech/C1-Patient-Room-Automation-System"
 git clone "${url}" "${folder}"
 folder="/home/c1tech/C1"
 [ -d "${folder}" ] && rm -rf "${folder}"    
-cd /home/c1tech/C1-Patient-Room-Automation-System/
+cd /home/c1tech/C1-Patient-Room-Automation-System/PRAS/
 # Build Qt App
 # cmake --build . --target clean
 cmake -G Ninja .
@@ -194,8 +187,9 @@ cmake --build . --parallel 4
 # ./appHAS -platform eglfs
 
 chown -R c1tech:c1tech /home/c1tech/C1-Patient-Room-Automation-System
+chmod +x /home/c1tech/C1-Patient-Room-Automation-System/ExecStart.sh
 echo "-------------------------------------"
-echo "Creating Service for Hospital Automation System Application"
+echo "Creating Service for Patient Room Automation System Application"
 echo "-------------------------------------"
 journalctl --vacuum-time=60d
 loginctl enable-linger c1tech
@@ -204,28 +198,37 @@ mkdir -p /home/c1tech/.config/systemd/user/default.target.wants/
 chown -R c1tech:c1tech /home/c1tech/.config
 export "XDG_RUNTIME_DIR=/run/user/$UID"
 export "DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus"
+export "QT_QPA_PLATFORM=eglfs"
 
-cat > /home/c1tech/.config/systemd/user/orcp.service << "EOF"
+cat > /home/c1tech/.config/systemd/user/pras.service << "EOF"
 [Unit]
 Description=C1Tech Patient Room Automation System V1.0
 
 [Service]
 Environment="XDG_RUNTIME_DIR=/run/user/$UID"
 Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus"
+Environment="QT_QPA_PLATFORM=eglfs"
 Environment="QT_QPA_EGLFS_ALWAYS_SET_MODE=1"
-Environment="QT_QPA_EGLFS_HIDECURSOR=1"
-ExecStart=/home/c1tech/C1-Patient-Room-Automation-System/PRAS/appHAS -platfrom eglfs
+# Environment="QT_QPA_EGLFS_HIDECURSOR=1"
+ExecStart=/home/c1tech/C1-Patient-Room-Automation-System/PRAS/appHAS
+# ExecStart=/bin/sh -c '/home/c1tech/C1/ExecStart.sh'
 Restart=always
 
 [Install]
 WantedBy=default.target
 EOF
-runuser -l c1tech -c 'export XDG_RUNTIME_DIR=/run/user/$UID && export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus && systemctl --user daemon-reload && systemctl --user enable orcp'
+runuser -l c1tech -c 'export XDG_RUNTIME_DIR=/run/user/$UID && export DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus && systemctl --user daemon-reload && systemctl --user enable pras'
 # systemctl --user daemon-reload
-# systemctl --user enable orcp --now
-# systemctl --user status orcp
-# systemctl --user restart orcp
-# journalctl --user --unit orcp --follow
+# systemctl --user enable pras --now
+# systemctl --user status pras
+# systemctl --user restart pras
+# journalctl --user --unit pras --follow
+echo "-------------------------------------"
+echo "Configuring Fonts"
+echo "-------------------------------------"
+sudo cp -r /home/c1tech/C1-Patient-Room-Automation-System/cooper-hewitt/* /usr/local/share/fonts/
+echo "build font information cache files"
+fc-cache -fv
 echo "-------------------------------------"
 echo "Configuring Splash Screen"
 echo "-------------------------------------"

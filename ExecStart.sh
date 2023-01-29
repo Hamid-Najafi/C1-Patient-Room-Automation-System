@@ -1,0 +1,1 @@
+/home/c1tech/C1-Patient-Room-Automation-System/PRAS/appHAS
