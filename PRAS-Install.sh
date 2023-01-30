@@ -3,7 +3,7 @@
 # Copyleft (c) 2022.
 # -------==========-------
 # Ubuntu Server 22.04.01
-# Hostname: pras6-5
+# Hostname: pras1-2
 # Username: c1tech
 # Password: 1478963
 # -------==========-------
