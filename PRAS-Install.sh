@@ -178,16 +178,19 @@ folder="/home/c1tech/C1-Patient-Room-Automation-System"
 git clone "${url}" "${folder}"
 folder="/home/c1tech/C1"
 [ -d "${folder}" ] && rm -rf "${folder}"    
+
 cd /home/c1tech/C1-Patient-Room-Automation-System/PRAS/
 # Build Qt App
-# cmake --build . --target clean
+cmake --build . --target clean
 cmake -G Ninja .
 cmake --build . --parallel 4
 # cmake --install .
 # ./appHAS -platform eglfs
 
+mv /home/c1tech/C1-Control-Panel/C1 /home/c1tech/
+chown -R c1tech:c1tech /home/c1tech/C1
 chown -R c1tech:c1tech /home/c1tech/C1-Patient-Room-Automation-System
-chmod +x /home/c1tech/C1-Patient-Room-Automation-System/ExecStart.sh
+chmod +x /home/c1tech/C1/ExecStart.sh
 echo "-------------------------------------"
 echo "Creating Service for Patient Room Automation System Application"
 echo "-------------------------------------"
@@ -209,6 +212,8 @@ Environment="XDG_RUNTIME_DIR=/run/user/$UID"
 Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus"
 Environment="QT_QPA_PLATFORM=eglfs"
 Environment="QT_QPA_EGLFS_ALWAYS_SET_MODE=1"
+# Environment="QT_QPA_EGLFS_PHYSICAL_WIDTH=1280"
+# Environment="QT_QPA_EGLFS_PHYSICAL_HEIGHT=1024"
 # Environment="QT_QPA_EGLFS_HIDECURSOR=1"
 ExecStart=/home/c1tech/C1-Patient-Room-Automation-System/PRAS/appHAS
 # ExecStart=/bin/sh -c '/home/c1tech/C1/ExecStart.sh'

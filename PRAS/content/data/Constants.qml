@@ -3,8 +3,8 @@ import QtQuick
 
 
 QtObject {
-    readonly property int width: 1920
-    readonly property int height: 1080
+    readonly property int width: 1280
+    readonly property int height: 1024
 
     readonly property int topBarClosedHeigth: 92
     readonly property int topBarBaseHeigth: 45

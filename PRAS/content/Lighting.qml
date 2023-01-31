@@ -22,7 +22,7 @@ Item {
         onTriggered: {
             currentTime= new Date();
             txtDate.text = currentTime.toLocaleDateString(locale, Locale.LongFormat);
-            txtTime.text = currentTime.toLocaleTimeString(locale, Locale.LongFormat);
+            txtTime.text = currentTime.toLocaleTimeString(locale, Locale.ShortFormat);
         }
     }
 
@@ -57,7 +57,7 @@ Item {
         height: 64
         verticalAlignment: Text.AlignTop
         horizontalAlignment: Text.AlignHCenter
-        text: currentTime.toLocaleTimeString(locale, Locale.LongFormat);
+        text: currentTime.toLocaleTimeString(locale, Locale.ShortFormat);
         color : Colors.white
         font.family: "Cooper Hewitt"
         font.pixelSize: 78
