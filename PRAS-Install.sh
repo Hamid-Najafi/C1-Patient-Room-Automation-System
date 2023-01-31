@@ -28,33 +28,20 @@ timedatectl set-timezone Asia/Tehran
 echo "-------------------------------------"
 echo "Installing Pre-Requirements"
 echo "-------------------------------------"
-# string="http://ir.archive.ubuntu.com/ubuntu"
-# file="/etc/apt/sources.list"
-# if grep -q "$string" "$file"; then
-#   echo "Replacing APT Sources File"
-#   mv /etc/apt/sources.list{,.backup}
-#   sh -c "echo 'deb [trusted=yes] https://debian.iranrepo.ir bullseye main' >> /etc/apt/sources.list"
-#   # sh -c "echo 'deb [trusted=yes] https://debian.iranrepo.ir jammy main' >> /etc/apt/sources.list"
-#   sudo apt-key adv --keyserver debian.iranrepo.ir --recv-keys  648ACFD622F3D138
-#   sudo apt-key adv --keyserver debian.iranrepo.ir --recv-keys  0E98404D386FA1D9
-#   sudo apt-key adv --keyserver debian.iranrepo.ir --recv-keys  605C66F00D6C9793
-#   # wget https://raw.githubusercontent.com/Hamid-Najafi/DevOps-Notebook/master/Apps/Apt/amd64-sources.list -O /etc/apt/sources.list
-#   # wget https://raw.githubusercontent.com/Hamid-Najafi/DevOps-Notebook/master/Apps/Apt/arm64-sources.list -O /etc/apt/sources.list
-# fi
-# string="http://archive.ubuntu.com/ubuntu"
-# if grep -q "$string" "$file"; then
-#   echo "Replacing APT Sources File"
-#   mv /etc/apt/sources.list{,.backup}
-#   sh -c "echo 'deb [trusted=yes] https://debian.iranrepo.ir bullseye main' >> /etc/apt/sources.list"
-#   # sh -c "echo 'deb [trusted=yes] https://debian.iranrepo.ir jammy main' >> /etc/apt/sources.list"
-#   # wget https://raw.githubusercontent.com/Hamid-Najafi/DevOps-Notebook/master/Apps/Apt/amd64-sources.list -O /etc/apt/sources.list
-#   # wget https://raw.githubusercontent.com/Hamid-Najafi/DevOps-Notebook/master/Apps/Apt/arm64-sources.list -O /etc/apt/sources.list
-# fi
+string="http://ir.archive.ubuntu.com/ubuntu"
+file="/etc/apt/sources.list"
+if grep -q "$string" "$file"; then
+  echo "Replacing APT Sources File"
+  mv /etc/apt/sources.list{,.backup}
+  wget https://raw.githubusercontent.com/Hamid-Najafi/DevOps-Notebook/master/Apps/Apt/amd64-sources.list -O /etc/apt/sources.list
+  # wget https://raw.githubusercontent.com/Hamid-Najafi/DevOps-Notebook/master/Apps/Apt/arm64-sources.list -O /etc/apt/sources.list
+  # sh -c "echo 'deb [trusted=yes] https://debian.iranrepo.ir jammy main' >> /etc/apt/sources.list"
+fi
 
 export DEBIAN_FRONTEND=noninteractive
 apt update && apt upgrade -q -y 
-apt install -q -y debhelper build-essential software-properties-common gcc g++ gdb cmake ninja-build  \
-avahi-daemon python3-pip git nano lame sox libsox-fmt-mp3 curl atop bmon zip unzip openconnect
+apt install -q -y debhelper software-properties-common gcc g++ gdb cmake ninja-build  \
+avahi-daemon python3-pip git nano lame sox libsox-fmt-mp3 curl atop bmon zip unzip openconnect build-essential 
 echo "-------------------------------------"
 echo "Installing Qt & Tools"
 echo "-------------------------------------"
