@@ -8,7 +8,7 @@
 # Password: 1478963
 # -------==========-------
 # To Run This Script
-# wget https://raw.githubusercontent.com/Hamid-Najafi/C1-Patient-Room-Automation-System/main/PRAS-Install.sh && chmod +x PRAS-Install.sh && sudo ./HAS-Install.sh
+# wget https://raw.githubusercontent.com/Hamid-Najafi/C1-Patient-Room-Automation-System/main/PRAS-Install.sh && chmod +x PRAS-Install.sh && sudo ./PRAS-Install.sh
 # -------==========-------
 echo "-------------------------------------"
 echo "Setting Hostname"
@@ -46,9 +46,7 @@ echo "-------------------------------------"
 echo "Installing Qt & Tools"
 echo "-------------------------------------"
 apt install -q -y mesa-common-dev libfontconfig1 libxcb-xinerama0 libglu1-mesa-dev 
-apt install -q -y qt6*
-apt install -q -y libqt6*
-apt install -q -y qml6*
+apt install -q -y qt6* libqt6* qml6*
 echo "-------------------------------------"
 echo "Configuring Sound & Mic"
 echo "-------------------------------------"
@@ -104,7 +102,7 @@ sudo -H -u c1tech bash -c 'pip3 install sounddevice vosk shadowsocksr-cli'
 mkdir -p /home/c1tech/.cache/vosk
 chown -R c1tech:c1tech /home/c1tech
 # Manually Model Download (Because of Sanctions!)
-if [ ! -f /home/c1tech/.cache/vosk/vosk-model-small-fa-0.5.zip]
+if [ ! -f /home/c1tech/.cache/vosk/vosk-model-small-fa-0.5.zip ]
 then
   wget https://raw.githubusercontent.com/Hamid-Najafi/C1-Control-Panel/main/vosk-model-small-fa-0.5.zip -P /home/c1tech/.cache/vosk
   unzip /home/c1tech/.cache/vosk/vosk-model-small-fa-0.5.zip -d /home/c1tech/.cache/vosk
@@ -162,19 +160,17 @@ echo "-------------------------------------"
 url="https://github.com/Hamid-Najafi/C1-Patient-Room-Automation-System.git"
 folder="/home/c1tech/C1-Patient-Room-Automation-System"
 [ -d "${folder}" ] && rm -rf "${folder}"    
-git clone "${url}" "${folder}"
 folder="/home/c1tech/C1"
-[ -d "${folder}" ] && rm -rf "${folder}"    
+[ -d "${folder}" ] && rm -rf "${folder}"
 
+git clone "${url}" "${folder}"
 cd /home/c1tech/C1-Patient-Room-Automation-System/PRAS/
 # Build Qt App
 cmake --build . --target clean
 cmake -G Ninja .
 cmake --build . --parallel 4
-# cmake --install .
-# ./appHAS -platform eglfs
 
-mv /home/c1tech/C1-Control-Panel/C1 /home/c1tech/
+mv /home/c1tech/C1-Patient-Room-Automation-System/C1 /home/c1tech/
 chown -R c1tech:c1tech /home/c1tech/C1
 chown -R c1tech:c1tech /home/c1tech/C1-Patient-Room-Automation-System
 chmod +x /home/c1tech/C1/ExecStart.sh
@@ -243,8 +239,8 @@ echo "-------------------------------------"
 echo "Done, Performing System Reboot"
 echo "-------------------------------------"
 # Give c1tech Reboot Permision, CAUTION: This will break user connection to systemctl!
-chown root:c1tech /bin/systemctl
-chmod 4755 /bin/systemctl
+# chown root:c1tech /bin/systemctl
+# chmod 755 /bin/systemctl
 init 6
 echo "-------------------------------------"
 echo "Test Mic and Spk"

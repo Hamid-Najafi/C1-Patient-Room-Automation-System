@@ -8,7 +8,7 @@ GameModel::GameModel(QObject *parent)
 
 void GameModel::readData()
 {
-    QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/C1/Game.txt";);
+    QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/C1/Game.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << file.errorString();
         return;

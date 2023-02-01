@@ -1,0 +1,98 @@
+[
+ {
+  "header": "پیتزا مارگاریتا",
+  "subHeader": "گوجه فرنگی, ریحان, سیر, آویشن  و ...",
+  "image": "/home/c1tech/C1/Images/margherita.jpg",
+  "price": 168000
+ },
+ {
+  "header": "پیتزا پپرونی",
+  "subHeader": "پنیر پارمسان، سس گوجه فرنگی و سوسیس پپرونی ",
+  "image": "/home/c1tech/C1/Images/pepperoni.jpg",
+  "price": 156000
+ },
+ {
+  "header": "پیتزا مرغ",
+  "subHeader": "سینه مرغ, قارچ, آویشن, فلفل دلمه ای, پیاز و ...",
+  "image": "/home/c1tech/C1/Images/chicken.jpg",
+  "price": 158000
+ },
+ {
+  "header": "سوپ مرغ",
+  "subHeader": "جو پوست کنده, مرغ, هویج, پیاز , جعفری تازه و...",
+  "image": "/home/c1tech/C1/Images/پای-مرغ.jpg",
+  "price": 45000
+ },
+ {
+  "header": "سوپ شیر",
+  "subHeader": "جو, فیله سینه مرغ, پیاز, سیر, شیر, هویج, خامه و....",
+  "image": "/home/c1tech/C1/Images/سوپ-شیر.jpg",
+  "price": 36000
+ },
+ {
+  "header": "سوپ شیر و قارچ",
+  "subHeader": "جو, فیله سینه مرغ, قارچ, پیاز, سیر, شیر, هویج, خامه و....",
+  "image": "/home/c1tech/C1/Images/سوپ-شیر.jpg",
+  "price": 46000
+ },
+ {
+  "header": "سوپ جو قرمز",
+  "subHeader": "جو پوست کنده, مرغ, هویج, پیاز , جعفری تازه و...",
+  "image": "/home/c1tech/C1/Images/جو-قرمز.jpg",
+  "price": 35000
+ },
+ {
+  "header": "سوپ کلم بروکلی",
+  "subHeader": "کلم بروکلی, شیر, ماست, آرد سفید, آویشن و ...",
+  "image": "/home/c1tech/C1/Images/سوپ-بروکلی.jpg",
+  "price": 38000
+ },
+ {
+  "header": "سوپ پیاز فرانسوی",
+  "subHeader": "روغن زیتون فرابکر, سیر له شده, برگ بو, استاک گوشت, پنیر پارمزان رنده شده و ...",
+  "image": "/home/c1tech/C1/Images/سوپ-پیاز.jpg",
+  "price": 32000
+ },
+ {
+  "header": "سوپ مرغ با جو و خامه",
+  "subHeader": "سینه مرغ, جو کامل, آرد, خامه و ...",
+  "image": "/home/c1tech/C1/Images/سوپ-مرغ-با-خامه-و-جو.jpg",
+  "price": 48000
+ },
+ {
+  "header": "سوپ تره فرنگی",
+  "subHeader": "نان خشک سرخ شده, آب گوشت, زرده تخم مرغ, خامه ترش و ...",
+  "image": "/home/c1tech/C1/Images/سوپ-تره-فرنگی.jpg",
+  "price": 40000
+ },
+ {
+  "header": "کباب چنجه",
+  "subHeader": "400 گرم برنچ ایرانی  و 200 گرم چنچه گوشت فیله گوسفند",
+  "image": "/home/c1tech/C1/Images/Kabab-Chenjeh-1-1024x785-1-e1612392379243.jpg",
+  "price": 210000
+ },
+ {
+  "header": "کباب برگ",
+  "subHeader": "400 گرم برنچ ایرانی  و 200 گرم کباب برگ گوسفند",
+  "image": "/home/c1tech/C1/Images/158b62ab83724617a6dad392e5f79ff3-e1612392688963.jpg",
+  "price": 215000
+ },
+ {
+  "header": "کباب بختیاری",
+  "subHeader": "400 گرم برنچ ایرانی  و 200 گرم کباب بختیاری",
+  "image": "/home/c1tech/C1/Images/2-min-3-e1612393029448.jpg",
+  "price": 240000
+ },
+ {
+  "header": "کباب بناب",
+  "subHeader": "400 گرم برنچ ایرانی  و 350 گرم کباب کوبیده بناب",
+  "image": "/home/c1tech/C1/Images/بناب-e1612441957347.jpg",
+  "price": 210000
+ },
+ {
+  "header": "جوجه کباب زعفرانی",
+  "subHeader": "400 گرم برنچ ایرانی  و 300 گرم کباب فیله مرغ زعفرانی",
+  "image": "/home/c1tech/C1/Images/جوجهکباب-768x512-1-e1612394747816.jpg",
+  "price": 198000
+ }
+]

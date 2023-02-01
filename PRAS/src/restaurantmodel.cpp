@@ -8,7 +8,7 @@ RestaurantModel::RestaurantModel(QObject *parent)
 
 void RestaurantModel::readData()
 {
-    QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/C1/Food.txt";);
+    QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/C1/Food.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << file.errorString();
         return;

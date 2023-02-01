@@ -8,7 +8,7 @@ TVModel::TVModel(QObject *parent)
 
 void TVModel::readData()
 {
-    QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/C1/TV.txt";);
+    QFile file(QStandardPaths::writableLocation(QStandardPaths::HomeLocation) + "/C1/TV.txt");
     if (!file.open(QIODevice::ReadOnly)) {
         qDebug() << file.errorString();
         return;
