@@ -158,15 +158,17 @@ echo "-------------------------------------"
 echo "Installing Patient Room Automation System Application"
 echo "-------------------------------------"
 url="https://github.com/Hamid-Najafi/C1-Patient-Room-Automation-System.git"
-folder="/home/c1tech/C1-Patient-Room-Automation-System"
-[ -d "${folder}" ] && rm -rf "${folder}"    
+
 folder="/home/c1tech/C1"
+[ -d "${folder}" ] && rm -rf "${folder}"
+
+folder="/home/c1tech/C1-Patient-Room-Automation-System"
 [ -d "${folder}" ] && rm -rf "${folder}"
 
 git clone "${url}" "${folder}"
 cd /home/c1tech/C1-Patient-Room-Automation-System/PRAS/
 # Build Qt App
-cmake --build . --target clean
+# cmake --build . --target clean
 cmake -G Ninja .
 cmake --build . --parallel 4
 
