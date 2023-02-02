@@ -193,7 +193,7 @@ cat > /home/c1tech/.config/systemd/user/pras.service << "EOF"
 Description=C1Tech Patient Room Automation System V1.0
 
 [Service]
-Environment="XDG_RUNTIME_DIR=/run/user/$UID"
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
 Environment="DBUS_SESSION_BUS_ADDRESS=unix:path=$XDG_RUNTIME_DIR/bus"
 Environment="QT_QPA_PLATFORM=eglfs"
 Environment="QT_QPA_EGLFS_ALWAYS_SET_MODE=1"
@@ -214,9 +214,10 @@ runuser -l c1tech -c 'export XDG_RUNTIME_DIR=/run/user/$UID && export DBUS_SESSI
 # systemctl --user restart pras
 # journalctl --user --unit pras --follow
 echo "-------------------------------------"
-echo "Configuring Fonts"
+echo "Installing Fonts"
 echo "-------------------------------------"
-sudo cp -r /home/c1tech/C1-Patient-Room-Automation-System/cooper-hewitt/* /usr/local/share/fonts/
+git clone https://github.com/Hamid-Najafi/FontPack.git /usr/share/fonts/FontPack || cd /usr/share/fonts/FontPack && git pull
+sudo cp -r /home/c1tech/C1-Patient-Room-Automation-System/PRAS/fonts/* /usr/local/share/fonts/
 echo "build font information cache files"
 fc-cache -fv
 echo "-------------------------------------"

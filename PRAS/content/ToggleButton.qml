@@ -80,6 +80,7 @@ Item {
         font.pixelSize: 40
         font.styleName: "Light"
         font.weight: Font.DemiBold
+        fontSizeMode: Text.Fit
     }
 
     Text {
@@ -97,6 +98,7 @@ Item {
         font.pixelSize: 28
         font.styleName: "Semibold"
         font.weight: Font.DemiBold
+        fontSizeMode: Text.Fit
     }
 
     Image {

@@ -247,9 +247,10 @@ Item{
             font.pixelSize: 100
             font.styleName: "Thin"
             font.weight: Font.Bold
+            fontSizeMode: Text.Fit
         }
         Image {
-            property int size: 128
+            property int size: 64
             id: imgIcon
             source: ""
             x: root.size / 2 - (imgIcon.size * 1.5)
@@ -280,6 +281,7 @@ Item{
             font.pixelSize: 64
             font.styleName: "Thin"
             font.weight: Font.DemiBold
+            fontSizeMode: Text.Fit
         }
 
     function getBaseArcEndX(startAngle, sweepAngle,radius ,center ){

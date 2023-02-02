@@ -230,7 +230,7 @@ Item {
         anchors.topMargin: 32
         x: root.width / 2 + (root.width / 2  - size) / 2
         mColor: Colors.green
-        size: 600
+        size: 200
         mHeader: "Dim Light"
         mIcon: "images/light_off.svg"
 
