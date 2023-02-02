@@ -1,4 +1,4 @@
-import QtQuick  
+import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import Qt5Compat.GraphicalEffects
@@ -62,6 +62,9 @@ Item {
         font.pixelSize: 28
         font.styleName: "Light"
         font.weight: Font.DemiBold
+        fontSizeMode: Text.Fit
+        wrapMode: Text.NoWrap
+        clip: true
     }
 
     Text {
@@ -101,6 +104,9 @@ Item {
         font.pixelSize: 18
         font.styleName: "SemiBod"
         font.weight: Font.Bold
+        fontSizeMode: Text.Fit
+        wrapMode: Text.NoWrap
+        clip: true
     }
 
 

@@ -1,4 +1,4 @@
-import QtQuick  
+import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import Qt5Compat.GraphicalEffects
@@ -53,7 +53,7 @@ Item {
             width: Constants.width
             columns: 3
             rowSpacing: 16
-            columnSpacing: 32
+            columnSpacing: 8
         }
     }
 

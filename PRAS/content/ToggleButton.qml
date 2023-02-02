@@ -102,7 +102,7 @@ Item {
     }
 
     Image {
-        property int size: 128
+        property int size: 80
         id: imgIcon
         source: context.icon
         x: 32

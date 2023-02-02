@@ -1,4 +1,4 @@
-import QtQuick  
+import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Shapes  as Sh
@@ -108,6 +108,9 @@ Item {
         font.pixelSize: 36
         font.styleName: "Light"
         font.weight: Font.DemiBold
+        fontSizeMode: Text.Fit
+        wrapMode: Text.NoWrap
+        clip: true
     }
 
     Text {
@@ -120,13 +123,15 @@ Item {
         anchors.rightMargin: 16
         anchors.top: txtHeader.bottom
         anchors.topMargin: 8
-        wrapMode:Text.Wrap
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignTop
         font.family: "Far.Nazanin"
         font.pixelSize: 22
         font.styleName: "Semibold"
         font.weight: Font.DemiBold
+        fontSizeMode: Text.Fit
+        wrapMode: Text.NoWrap
+        clip: true
     }
 
 

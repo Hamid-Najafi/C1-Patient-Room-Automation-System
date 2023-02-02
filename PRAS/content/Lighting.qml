@@ -6,8 +6,8 @@ Item {
     property alias mWidth: root.width
     property alias mHeight: root.height
 
-    width: 1920
-    height: 780
+    width: 1280
+    height: 1024
 
     property var locale: Qt.locale()
     property date currentTime: new Date()
@@ -109,7 +109,7 @@ Item {
         mOffString: "OFF"
         mOnString: "ON"
         onMContextStateChanged: function(state){
-            controler.setRelay(2,state);
+            controler.setRelay(3,state);
         }
     }
 
@@ -228,20 +228,22 @@ Item {
         property int sliderValue: 0
         anchors.top: parent.top
         anchors.topMargin: 32
-        x: root.width / 2 + (root.width / 2  - size) / 2
+        x: root.width   - size - 32
         mColor: Colors.green
-        size: 200
+        size: 300
         mHeader: "Dim Light"
         mIcon: "images/light_off.svg"
 
         onMSliderValueChanged : function(val){
             let p = Math.floor(val / 5);
             if(p > dimSlider.sliderValue){
-                controler.increaseDim();
+//                controler.increaseDim();
                 dimSlider.sliderValue = p;
+                controler.setDim(val);
             }else if(p < dimSlider.sliderValue){
-                controler.decreaseDim();
+//                controler.decreaseDim();
                 dimSlider.sliderValue = p;
+                controler.setDim(val);
             }
         }
     }

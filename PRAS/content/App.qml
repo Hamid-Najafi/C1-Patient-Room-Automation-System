@@ -27,9 +27,9 @@
 **
 ****************************************************************************/
 
-import QtQuick  
+import QtQuick
 import QtQuick.Layouts
-import QtQuick.Window  
+import QtQuick.Window
 
 Window {
     id: root

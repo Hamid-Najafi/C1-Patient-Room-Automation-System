@@ -1,4 +1,4 @@
-import QtQuick  
+import QtQuick
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Shapes  as Sh
@@ -84,6 +84,7 @@ Item {
             color: "transparent"
             GridLayout{
                 columns: 2
+                anchors.fill: parent
                 Text {
                     id: txtName
                     text: qsTr("Full Name:")
@@ -110,6 +111,7 @@ Item {
                     font.styleName: "Light"
                     font.weight: Font.DemiBold
                     Layout.margins: 8
+                    fontSizeMode: Text.Fit
                 }
                 Text {
                     id: txtTitle
@@ -137,6 +139,7 @@ Item {
                     font.styleName: "Light"
                     font.weight: Font.DemiBold
                     Layout.margins: 8
+                    fontSizeMode: Text.Fit
                 }
                 Text {
                     id: txtId
@@ -164,6 +167,7 @@ Item {
                     font.styleName: "Light"
                     font.weight: Font.DemiBold
                     Layout.margins: 8
+                    fontSizeMode: Text.Fit
                 }
             }
         }

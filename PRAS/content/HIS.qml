@@ -1,4 +1,4 @@
-import QtQuick  
+import QtQuick
 import QtWebEngine
 import Qt.labs.settings
 import QtQml

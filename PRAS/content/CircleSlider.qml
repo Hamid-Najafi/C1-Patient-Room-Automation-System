@@ -1,4 +1,4 @@
-import QtQuick  
+import QtQuick
 import QtQuick.Layouts
 import QtQuick.Shapes  as Sh
 import Qt5Compat.GraphicalEffects
@@ -250,7 +250,7 @@ Item{
             fontSizeMode: Text.Fit
         }
         Image {
-            property int size: 64
+            property int size: 80
             id: imgIcon
             source: ""
             x: root.size / 2 - (imgIcon.size * 1.5)
@@ -271,6 +271,7 @@ Item{
             text: "DIM"
             anchors.left: imgIcon.right
             anchors.right: parent.right
+            anchors.rightMargin: 32
             anchors.top: parent.top
             y: 0
             height: root.size / 2
