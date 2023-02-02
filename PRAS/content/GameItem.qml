@@ -11,7 +11,7 @@ Item {
     property string mLink
     property int mSize : 96
     id: root
-    width: Constants.width / 3 - 128
+    width: Constants.width / 3 - 16
     height: root.mSize
 
     Rectangle {

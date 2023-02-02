@@ -17,7 +17,7 @@ Item {
         anchors.right: root.right
         anchors.leftMargin: 8
         anchors.rightMargin: 8
-        anchors.bottomMargin: 32
+        anchors.bottomMargin: 128
         height: 8
         radius: root.height / 8
         LinearGradient{
@@ -85,7 +85,7 @@ Item {
         anchors.leftMargin: 8
         anchors.rightMargin: 8
         anchors.topMargin: 16
-        height: root.height / 2
+        height: root.height / 2 + 200
         color: Colors.white
         horizontalAlignment:  Qt.AlignLeft
         verticalAlignment: Qt.AlignVCenter
@@ -98,7 +98,7 @@ Item {
     {
         id: colorBox
         anchors.bottom: root.bottom
-        anchors.bottomMargin: 32 - (colorBox.height / 2) + (rgbBox.height / 2)
+        anchors.bottomMargin: 128 - (colorBox.height / 2) + (rgbBox.height / 2)
         height: 24
         width: 24
         color: root.rectColor

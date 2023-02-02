@@ -1,32 +1,32 @@
 [
  {
-  "header": "0hh1",
+  "header": "0h n1",
   "subHeader": "A lovely little logic game by Q42.",
-  "image": "/home/c1tech/C1/games/0hh1.png",
+  "image": "/home/c1tech/C1/Images/game/0hh1.png",
   "link": "/home/c1tech/C1/games/0hh1/index.html"
  },
  {
-  "header": 2048,
+  "header": "2048",
   "subHeader": "single-player sliding tile puzzle video game",
-  "image": "/home/c1tech/C1/games/2048.png",
+  "image": "/home/c1tech/C1/Images/game/2048.png",
   "link": "/home/c1tech/C1/games/2048/index.html"
  },
  {
-  "header": "Clumsy bird",
+  "header": "Clumsy Bird",
   "subHeader": "Flappy Bird",
-  "image": "/home/c1tech/C1/games/bird.png",
+  "image": "/home/c1tech/C1/Images/game/bird.png",
   "link": "/home/c1tech/C1/games/clumsy-bird/index.html"
  },
  {
   "header": "Hextrix",
   "subHeader": "fast paced puzzle game",
-  "image": "/home/c1tech/C1/games/hextrix.png",
+  "image": "/home/c1tech/C1/Images/game/hextrix.png",
   "link": "/home/c1tech/C1/games/hextrix/index.html"
  },
  {
   "header": "Tetris",
   "subHeader": "Tetris",
-  "image": "/home/c1tech/C1/games/tetris.png",
+  "image": "/home/c1tech/C1/Images/game/tetris.png",
   "link": "/home/c1tech/C1/games/tetris/index.html"
  }
 ]

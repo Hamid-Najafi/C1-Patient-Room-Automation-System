@@ -228,7 +228,7 @@ Item {
         property int sliderValue: 0
         anchors.top: parent.top
         anchors.topMargin: 32
-        x: root.width   - size - 32
+        x: root.width   - size - 60
         mColor: Colors.green
         size: 300
         mHeader: "Dim Light"
