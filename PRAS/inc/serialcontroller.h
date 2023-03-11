@@ -14,10 +14,10 @@ class SerialController : public QObject
     QString serialPortName = "/dev/ttyUSB0";
     QString serialPortBuad = "115200";
 
-    QString relay_id       = "680834697";
+    QString relay_id       = "2822716701";
     QString hub_id         = "676650989";
-    QString Curtain_id     = "2525972361";
-    QString Right_light_id = "680857577";
+    QString Curtain_id     = "3288729225";
+    QString Right_light_id = "2094720605";
     QString Left_light_id  = "3288725753";
     QString RGB_id         = "2882870609";
 
